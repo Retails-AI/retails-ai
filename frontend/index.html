@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailAI Intelligence — Autonomous Retail OS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="cyber-dark-theme">
+
+    <!-- Background Grid Lines Effect -->
+    <div class="grid-background"></div>
+
+    <!-- Floating Pill Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-pulse"></div>
+                <span class="logo-text">RetailAI<span class="dot">.os</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#ecosystem">Ecosystem</a>
+                <a href="#intelligence">AI Terminal</a>
+                <a href="#security">Zero-Trust</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-ghost" id="navSignInBtn" onclick="window.location.href='login.html'">Sign In</button>
+                <button class="btn btn-glow" id="navInitBtn" onclick="window.location.href='registration.html'">Initialize Core</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Asymmetric Hero Section -->
+    <section class="hero-asymmetric">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="cyber-pill">
+                    <span class="pill-dot" style="background: #10b981; box-shadow: 0 0 10px #10b981;"></span>
+                    <span>SMART RETAIL. POWERED BY AI.</span>
+                </div>
+                <h1 class="hero-headline">
+                    Run Your Business <br><span class="text-glow">Smarter, Not Harder.</span>
+                </h1>
+                <p class="hero-desc">
+                    RetailAI.os is an all-in-one, AI-powered retail management system built for modern businesses — manage sales, inventory, customers and get intelligent insights, all in one place.
+                </p>
+                
+                <!-- Professional Glowing Mini Feature Icons -->
+                <div class="hero-features-mini">
+                    <div class="mini-feature-card">
+                        <div class="mini-icon-box glow-cyan">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        </div>
+                        <div class="mini-text">
+                            <strong>Point of Sale</strong>
+                            <span>Fast & Reliable</span>
+                        </div>
+                    </div>
+                    <div class="mini-feature-card">
+                        <div class="mini-icon-box glow-indigo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <div class="mini-text">
+                            <strong>Inventory</strong>
+                            <span>Real-time Stock</span>
+                        </div>
+                    </div>
+                    <div class="mini-feature-card">
+                        <div class="mini-icon-box glow-purple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <div class="mini-text">
+                            <strong>Customers</strong>
+                            <span>Build Loyalty</span>
+                        </div>
+                    </div>
+                    <div class="mini-feature-card">
+                        <div class="mini-icon-box glow-cyan">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <div class="mini-text">
+                            <strong>AI Insights</strong>
+                            <span>Smarter Decisions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn btn-glow btn-xl" id="heroLaunchBtn" onclick="window.location.href='registration.html'">Get Started Free →</button>
+                    <button class="btn btn-ghost btn-xl demo-btn" onclick="document.getElementById('intelligence').scrollIntoView({behavior: 'smooth'})">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        View Live Demo
+                    </button>
+                </div>
+
+                <div class="hero-trust-checks">
+                    <span>✓ No credit card required</span>
+                    <span>✓ Easy setup</span>
+                    <span>✓ Built for growing businesses</span>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-image-wrapper">
+                    <div class="floating-annotation top-annotation">
+                        Your Business<br>At a Glance ↗
+                    </div>
+                    <div class="laptop-mockup-container">
+                        <img src="assets/image/hero.png" alt="RetailAI.os Command Center Dashboard" class="hero-dashboard-img">
+                    </div>
+                    <div class="floating-annotation bottom-annotation">
+                        ↙ Powerful Modules.<br>Real Impact.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Stats Bar -->
+        <div class="container hero-stats-bar">
+            <div class="stat-card">
+                <h3>10K+</h3>
+                <p>Transactions Processed</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Business Control In One Place</p>
+            </div>
+            <div class="stat-card">
+                <h3>AI</h3>
+                <p>Powered Insights</p>
+            </div>
+            <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Secure & Reliable</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Ecosystem Section -->
+    <section class="ecosystem-bento" id="ecosystem">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-tag">Unified Architecture</span>
+                <h2>Modular Power. Zero Friction.</h2>
+            </div>
+            <div class="bento-grid">
+                <div class="bento-card bento-large">
+                    <div class="bento-content">
+                        <span class="card-tag">Telemetry</span>
+                        <h3>Real-Time Sales & Revenue Flows</h3>
+                        <p>Monitor live transactions, hourly volume spikes, and automatic ledger adjustments instantly without manual bookkeeping delays.</p>
+                    </div>
+                    <div class="bento-graphic-sales">
+                        <div class="pulse-bar" style="height: 40%;"></div>
+                        <div class="pulse-bar" style="height: 70%;"></div>
+                        <div class="pulse-bar active" style="height: 95%;"></div>
+                        <div class="pulse-bar" style="height: 60%;"></div>
+                    </div>
+                </div>
+                <div class="bento-card bento-small">
+                    <span class="card-tag">Inventory</span>
+                    <h3>Smart Stock Guard</h3>
+                    <p>Automated threshold tracking alerts you before high-demand items hit zero stock.</p>
+                </div>
+                <div class="bento-card bento-small">
+                    <span class="card-tag">Expenses</span>
+                    <h3>Overhead Control</h3>
+                    <p>Granular classification of operational cash outflows categorized natively in ₹.</p>
+                </div>
+                <div class="bento-card bento-large">
+                    <div class="bento-content">
+                        <span class="card-tag">Security Kernel</span>
+                        <h3>Strict Zero-Trust AI Guardrails</h3>
+                        <p>Your database is protected by predefined application logic barriers. Gemini never executes raw SQL or touches credentials directly—ensuring absolute system safety.</p>
+                    </div>
+                    <div class="security-badge-box">
+                        <span class="sec-pill">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            Isolated Context
+                        </span>
+                        <span class="sec-pill">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            SQL Injection Proof
+                        </span>
+                        <span class="sec-pill">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            Role-Based JWT
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive AI Terminal Section -->
+    <section class="interactive-terminal-section" id="intelligence">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-tag">Live Simulation Engine</span>
+                <h2>Test the AI Assistant Interface</h2>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Simulate natural-language multi-turn retail queries against controlled context.</p>
+            </div>
+            <div class="sandbox-container">
+                <div class="sandbox-sidebar">
+                    <h4>Quick Presets</h4>
+                    <button class="preset-btn" data-query="Is month sales kaisi rahi?">
+                        <span class="preset-icon cyan">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        </span>
+                        "Is month sales kaisi rahi?"
+                    </button>
+                    <button class="preset-btn" data-query="Kaunse products sabse zyada bik rahe hain?">
+                        <span class="preset-icon indigo">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                        </span>
+                        "Kaunse products bik rahe hain?"
+                    </button>
+                    <button class="preset-btn" data-query="Profit kitna hua?">
+                        <span class="preset-icon purple">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </span>
+                        "Profit kitna hua?"
+                    </button>
+                    <button class="preset-btn" data-query="Aur expenses?">
+                        <span class="preset-icon cyan">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                        </span>
+                        "Aur expenses?" (Follow-up)
+                    </button>
+                </div>
+                <div class="sandbox-main">
+                    <div class="sandbox-screen" id="sandboxScreen">
+                        <div class="sandbox-msg ai">
+                            <span class="msg-author">RetailAI Assistant</span>
+                            <p>System initialized. Ask me anything about your retail operations in English or Hinglish.</p>
+                        </div>
+                    </div>
+                    <div class="sandbox-input-box">
+                        <input type="text" id="sandboxInput" placeholder="Type a business query (e.g., Stock status batao)...">
+                        <button class="btn btn-glow" id="sandboxSend">Send Query</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zero-Trust Architecture Section -->
+    <section class="zero-trust-section" id="security">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-tag">Enterprise Defense</span>
+                <h2>Zero-Trust & Anti-Hallucination Matrix</h2>
+            </div>
+            <div class="zt-grid">
+                <div class="zt-card">
+                    <div class="zt-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>No Dynamic SQL Generation</h3>
+                    <p>The AI model never sees raw database connections or executes dynamic SQL. Queries are filtered through hardened, pre-compiled service functions.</p>
+                </div>
+                <div class="zt-card">
+                    <div class="zt-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <h3>Zero User-Metric Trust</h3>
+                    <p>User statements like "My sales are ₹1 crore" are rejected and overridden by real-time aggregated database verification layers.</p>
+                </div>
+                <div class="zt-card">
+                    <div class="zt-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h3>Scope Lockdown</h3>
+                    <p>Prompt boundary enforcement completely blocks out-of-scope trivia or jailbreak attempts while enforcing strict INR (₹) notation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-cyber">
+        <div class="container footer-flex">
+            <div class="logo">
+                <span class="logo-text">RetailAI<span class="dot">.os</span></span>
+            </div>
+            <p class="footer-copy">&copy; 2026 RetailAI Intelligence Systems. Autonomous Operations Matrix.</p>
+            <div class="footer-links-inline">
+                <a href="#">Privacy Protocol</a>
+                <a href="#">Security Audit</a>
+                <a href="#">System Status</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

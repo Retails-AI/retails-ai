@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailAI Intelligence — Secure Access Terminal</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="login-body">
+
+    <!-- Background Grid Lines Effect -->
+    <div class="grid-background"></div>
+
+    <div class="split-screen-container">
+        <!-- Left Side: Brand & Platform Showcase with hero.png Background Overlay -->
+        <div class="brand-side">
+            <div class="brand-bg-overlay"></div>
+            <div class="brand-content">
+                <div class="brand-top-header">
+                    <div class="logo">
+                        <div class="logo-pulse"></div>
+                        <span class="logo-text">RetailAI<span class="dot">.os</span></span>
+                    </div>
+                    <span class="brand-sub-badge">Smart Retail. Powered by AI.</span>
+                </div>
+
+                <div class="all-in-one-pill">
+                    <span>✦ ALL-IN-ONE RETAIL MANAGEMENT</span>
+                </div>
+
+                <h1 class="hero-logo-text">Run Your Business <br><span class="text-glow">Smarter with AI</span></h1>
+                <p class="hero-tagline">Manage sales, inventory, customers and get intelligent insights — all in one place.</p>
+                
+                <!-- 4 Feature Mini Highlights Grid -->
+                <div class="login-features-grid">
+                    <div class="login-feature-card">
+                        <div class="lfc-icon-box glow-cyan">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        </div>
+                        <div>
+                            <strong>Sales & Billing</strong>
+                            <span>Fast and reliable</span>
+                        </div>
+                    </div>
+                    <div class="login-feature-card">
+                        <div class="lfc-icon-box glow-indigo">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                        </div>
+                        <div>
+                            <strong>Inventory Management</strong>
+                            <span>Real-time stock</span>
+                        </div>
+                    </div>
+                    <div class="login-feature-card">
+                        <div class="lfc-icon-box glow-purple">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div>
+                            <strong>Customer Management</strong>
+                            <span>Build loyalty</span>
+                        </div>
+                    </div>
+                    <div class="login-feature-card">
+                        <div class="lfc-icon-box glow-cyan">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <div>
+                            <strong>AI Insights</strong>
+                            <span>Make better decisions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trusted Stats Bar -->
+                <div class="login-stats-section">
+                    <p class="trusted-label">Trusted by modern businesses</p>
+                    <div class="login-stats-row">
+                        <div>
+                            <h3>10K+</h3>
+                            <span>Transactions Processed</span>
+                        </div>
+                        <div>
+                            <h3>100%</h3>
+                            <span>Business Control In One Place</span>
+                        </div>
+                        <div>
+                            <h3>24/7</h3>
+                            <span>Secure & Reliable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Quote Box -->
+                <div class="login-quote-box">
+                    <span class="quote-symbol">“</span>
+                    <p>"Technology should make business easier, not harder."</p>
+                    <span>— RetailAI.os</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Authentication Form -->
+        <div class="form-side">
+            <div class="login-card glass-panel">
+                <!-- Back to Home Link -->
+                <div class="back-home-container">
+                    <a href="../index.html" class="back-home-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Back to Home
+                    </a>
+                </div>
+
+                <div class="login-top-brand">
+                    <div class="logo-pulse"></div>
+                    <div class="login-header">
+                        <h2>Welcome Back</h2>
+                        <p>Login to your RetailAI.os account</p>
+                    </div>
+                </div>
+
+                <form id="loginForm" class="login-form">
+                    <div id="errorBanner" class="error-banner hidden"></div>
+
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <div class="input-field-wrapper">
+                            <span class="input-ico">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </span>
+                            <input type="text" id="username" required placeholder="Enter your username">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-field-wrapper">
+                            <span class="input-ico">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </span>
+                            <input type="password" id="password" required placeholder="Enter your password">
+                        </div>
+                    </div>
+
+                    <div class="form-options-row">
+                        <label class="remember-checkbox">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn btn-glow w-full">
+                        <span class="btn-text">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                            Login
+                        </span>
+                    </button>
+                </form>
+                <div class="register-link" style="text-align: center; margin-top: 16px; color: var(--text-muted); font-size: 12px;">
+                    Don't have an enterprise account? 
+                    <a href="registration.html" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700; margin-left: 4px;">Initialize Account</a>
+                </div>
+
+
+                <!-- 3 Bottom Trust Features Icons with Professional SVGs -->
+                <div class="login-form-footer-features">
+                    <div class="ft-item">
+                        <div class="ft-ico-box glow-cyan">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <span>Secure Access</span>
+                    </div>
+                    <div class="ft-item">
+                        <div class="ft-ico-box glow-indigo">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
+                        <span>Fast & Reliable</span>
+                    </div>
+                    <div class="ft-item">
+                        <div class="ft-ico-box glow-purple">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <span>Role Based</span>
+                    </div>
+                </div>
+
+                <div class="login-footer">
+                    <p>&copy; 2026 RetailAI.os. All rights reserved.</p>
+                    <div class="footer-legal-links">
+                        <a href="#">Terms</a> • <a href="#">Privacy</a> • <a href="#">Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

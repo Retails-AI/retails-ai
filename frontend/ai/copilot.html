@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreSys — AI Copilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="copilot.css">
+</head>
+<body>
+
+    <div class="cyber-grid"></div>
+
+    <main class="page-container">
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <div style="margin-bottom: 8px;">
+                    <a href="../admin/dashboard.html" id="backDashboardBtn" class="btn btn-secondary" style="padding: 5px 10px; font-size: 11px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; height: 32px;">
+                        ← Back to Dashboard
+                    </a>
+                </div>
+                <div class="header-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="header-text">
+                    <span class="section-label">INTELLIGENCE SUITE / AI COPILOT</span>
+                    <h1>Autonomous Business Copilot</h1>
+                    <p>Real-time conversational telemetry, financial diagnostics, and inventory insights.</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    NEURAL LINK ONLINE
+                </div>
+            </div>
+        </header>
+
+        <!-- Copilot Card Container -->
+        <section class="copilot-card">
+            <div class="copilot-chat-window" id="chatMessages">
+                <div class="message ai-message">
+                    <div class="msg-icon"><i class="fa-solid fa-robot"></i></div>
+                    <div class="msg-content">
+                        <strong>AI Assistant</strong>
+                        <p>"Ask anything about your business metrics, sales revenue, inventory health, or operational bottlenecks."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested Chips Panel -->
+            <div class="suggestions-panel">
+                <span class="suggestions-label">
+                    <i class="fa-solid fa-bolt"></i> Suggested Telemetry Queries
+                </span>
+                <div class="chip-grid">
+                    <button class="chip" data-question="How is my business performing?">How is my business performing?</button>
+                    <button class="chip" data-question="Which product sells the most?">Which product sells the most?</button>
+                    <button class="chip" data-question="What is causing my losses?">What is causing my losses?</button>
+                    <button class="chip" data-question="Which products are low in stock?">Which products are low in stock?</button>
+                    <button class="chip" data-question="How can I improve profit?">How can I improve profit?</button>
+                </div>
+            </div>
+
+            <!-- Input Bar Area -->
+            <div class="copilot-input-area">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-terminal"></i>
+                    <input type="text" id="userInput" placeholder="Ask your business question or type query..." autocomplete="off">
+                </div>
+                <button class="btn btn-primary" id="sendBtn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Query
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="copilot.js"></script>
+</body>
+</html>

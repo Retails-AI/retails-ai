@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailAI Intelligence — Staff Inventory & Operations</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+</head>
+<body class="dash-body">
+
+    <div class="dash-layout">
+        <!-- Staff Sidebar -->
+        <aside class="dash-sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-pulse"></div>
+                <span class="brand-text">RetailAI<span class="dot">.os</span></span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon-box glow-cyan">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </span> 
+                    Dashboard
+                </a>
+                <a href="../inventory/inventory.html" class="nav-item">
+                    <span class="nav-icon-box glow-indigo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </span> 
+                    Inventory Grid
+                </a>
+                <a href="../product_catalog/product.html" class="nav-item">
+                    <span class="nav-icon-box glow-purple">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    </span> 
+                    Product Catalog
+                </a>
+                <a href="../procrument/procrument.html" class="nav-item">
+                    <span class="nav-icon-box glow-cyan">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    </span> 
+                    Procurement
+                </a>
+                <a href="../Supplier_hub/supplier.html" class="nav-item">
+                    <span class="nav-icon-box glow-indigo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </span> 
+                    Supplier Hub
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <span class="nav-icon-box glow-danger">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    </span> 
+                    Logout
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-pill-mini">
+                    <span class="status-dot"></span>
+                    <div>
+                        <p class="user-name-mini" id="userNameDisplay">Staff Portal</p>
+                        <p class="user-role-mini" id="userRoleDisplay">Inventory Operator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dash-main">
+            <!-- Header -->
+            <header class="dash-header">
+                <div class="header-title-box">
+                    <div class="breadcrumb"><span>Staff Terminal</span> / <strong>Operations Hub</strong></div>
+                    <h1>Inventory & Stock Control Center</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="live-status-pill">
+                        <span class="live-dot"></span>
+                        <span>Inventory Sync: <strong id="syncTime">Live</strong></span>
+                    </div>
+                    <div class="user-profile-box">
+                        <div class="avatar" id="headerAvatarInitials">ST</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="dash-content">
+                
+                <!-- 1. Staff KPIs with Icons -->
+                <section class="kpi-grid">
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-cyan">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                                </span>
+                                <span class="kpi-title">Total Stock Units</span>
+                            </div>
+                            <span class="kpi-badge positive">Active</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiTotalStock">0</h2>
+                        <p class="kpi-sub">Physical items warehoused</p>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-danger">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                </span>
+                                <span class="kpi-title">Low Stock Items</span>
+                            </div>
+                            <span class="kpi-badge negative" id="lowStockBadgeCount">0 Alerts</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiLowStock">0</h2>
+                        <p class="kpi-sub">SKUs below threshold</p>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-indigo">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </span>
+                                <span class="kpi-title">Healthy Products</span>
+                            </div>
+                            <span class="kpi-badge positive">Optimal</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiHealthySkus">0</h2>
+                        <p class="kpi-sub">Adequate stock levels</p>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-purple">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                                </span>
+                                <span class="kpi-title">Stock Movements</span>
+                            </div>
+                            <span class="kpi-badge">Today</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiMovements">0</h2>
+                        <p class="kpi-sub">Inbound/Outbound logs</p>
+                    </div>
+                </section>
+
+                <!-- 2. Main Analytics Row: Low Stock Alerts & Product Availability -->
+                <section class="analytics-row">
+                    <div class="analytics-card glass-panel wide-card">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-danger">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                </span>
+                                <div>
+                                    <h3>Low Stock Alerts Matrix</h3>
+                                    <p class="card-desc">SKUs requiring immediate reordering or replenishment</p>
+                                </div>
+                            </div>
+                            <span class="sub-link" id="refreshAlerts">Refresh List</span>
+                        </div>
+                        <div class="table-container">
+                            <table class="dash-table" id="lowStockTable">
+                               <thead>
+                                   <tr>
+                                       <th>Product Name</th>
+                                       <th>Current Stock</th>
+                                       <th>Threshold Limit</th>
+                                       <th>Status</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Loading low stock metrics...</td></tr>
+                               </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card glass-panel narrow-card">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-cyan">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                                </span>
+                                <div>
+                                    <h3>Inventory Health</h3>
+                                    <p class="card-desc">Stock distribution ratios</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inventory-health-box">
+                            <div class="health-stat-item">
+                                <span class="health-label">Stock Adequacy Rate</span>
+                                <span class="health-val" id="healthAdequacyRate">0%</span>
+                            </div>
+                            <div class="health-stat-item">
+                                <span class="health-label">Total Tracked SKUs</span>
+                                <span class="health-val" id="totalTrackedSkus">0</span>
+                            </div>
+                            <div class="health-stat-item">
+                                <span class="health-label">Pending Procurement</span>
+                                <span class="health-val" id="pendingProcurement">0 Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Bottom Row: Recent Stock Movements & Procurement Activity -->
+                <section class="analytics-row">
+                    <div class="analytics-card glass-panel wide-card">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-indigo">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                                </span>
+                                <div>
+                                    <h3>Recent Stock Movements</h3>
+                                    <p class="card-desc">Log of recent warehouse item adjustments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="dash-table" id="movementsTable">
+                               <thead>
+                                   <tr>
+                                       <th>Movement ID</th>
+                                       <th>Item SKU</th>
+                                       <th>Type</th>
+                                       <th>Quantity</th>
+                                       <th>Timestamp</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No recent stock movements recorded.</td></tr>
+                               </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card glass-panel narrow-card">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-purple">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </span>
+                                <div>
+                                    <h3>Procurement Activity</h3>
+                                    <p class="card-desc">Active supply orders</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="procurement-feed" id="procurementFeed">
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">No active purchase orders pending.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

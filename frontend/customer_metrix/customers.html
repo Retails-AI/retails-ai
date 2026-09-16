@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RetailAI.OS - Customer Matrix</title>
+
+    <link rel="stylesheet" href="customers.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+            <div class="heading">
+                <p class="eyebrow">
+                    CUSTOMER MANAGEMENT
+                </p>
+                <h1>
+                    Customers
+                </h1>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="date-range-pill" style="background: rgba(30, 41, 59, 0.6); border: 1px solid var(--border-cyber); padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted);">
+                    <span>📅 01 Sep 2025 - 13 Sep 2025</span>
+                </div>
+                <button
+                    id="backDashboardBtn"
+                    style="height: 36px; padding: 0 14px; border: 1px solid #1e293b; border-radius: 8px; color: #94a3b8; background: #0b1326; font-family: inherit; font-size: 11px; font-weight: 600; cursor: pointer; transition: 0.2s;"
+                >
+                    ← Back to Dashboard
+                </button>
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- CUSTOMER HEADER -->
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        MANAGE YOUR CUSTOMERS, VIEW PURCHASE HISTORY AND TRACK OUTSTANDING PAYMENTS.
+                    </span>
+
+                    <h2 style="font-size: 26px; font-weight: 800; margin-top: 4px;">
+                        Customers
+                    </h2>
+                </div>
+
+                <button
+                    class="add-customer-btn"
+                    id="addCustomerBtn"
+                >
+                    <span>+</span>
+                    Add Customer
+                </button>
+
+            </div>
+
+            <!-- KPI Summary Bento Grid -->
+            <section class="summary-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 25px;">
+                <div class="bento-card" style="background: linear-gradient(135deg, rgba(17, 24, 39, 0.86), rgba(11, 15, 25, 0.75)); border: 1px solid var(--border-cyber); border-radius: 14px; padding: 20px;">
+                    <span style="display:block; color:var(--text-muted); font-family:'JetBrains Mono', monospace; font-size:9px;">TOTAL CUSTOMERS</span>
+                    <h3 id="kpiTotalCustomers" style="font-family:'JetBrains Mono', monospace; font-size:24px; font-weight:700; margin:10px 0 4px;">0</h3>
+                    <span style="font-size:10px; color:var(--success, #10b981);">↑ +12.5% Compared to last month</span>
+                </div>
+                <div class="bento-card" style="background: linear-gradient(135deg, rgba(17, 24, 39, 0.86), rgba(11, 15, 25, 0.75)); border: 1px solid var(--border-cyber); border-radius: 14px; padding: 20px;">
+                    <span style="display:block; color:var(--text-muted); font-family:'JetBrains Mono', monospace; font-size:9px;">TOTAL ORDERS</span>
+                    <h3 id="kpiTotalOrders" style="font-family:'JetBrains Mono', monospace; font-size:24px; font-weight:700; margin:10px 0 4px;">0</h3>
+                    <span style="font-size:10px; color:var(--success, #10b981);">↑ +18.6% From all customers</span>
+                </div>
+                <div class="bento-card" style="background: linear-gradient(135deg, rgba(17, 24, 39, 0.86), rgba(11, 15, 25, 0.75)); border: 1px solid var(--border-cyber); border-radius: 14px; padding: 20px;">
+                    <span style="display:block; color:var(--text-muted); font-family:'JetBrains Mono', monospace; font-size:9px;">TOTAL SALES</span>
+                    <h3 id="kpiTotalSales" style="font-family:'JetBrains Mono', monospace; font-size:24px; font-weight:700; margin:10px 0 4px; color:var(--accent-cyan, #06b6d4);">₹0.00</h3>
+                    <span style="font-size:10px; color:var(--success, #10b981);">↑ +22.1% From all customers</span>
+                </div>
+                <div class="bento-card" style="background: linear-gradient(135deg, rgba(17, 24, 39, 0.86), rgba(11, 15, 25, 0.75)); border: 1px solid var(--border-cyber); border-radius: 14px; padding: 20px;">
+                    <span style="display:block; color:var(--text-muted); font-family:'JetBrains Mono', monospace; font-size:9px;">OUTSTANDING RECEIVABLES</span>
+                    <h3 id="kpiOutstanding" style="font-family:'JetBrains Mono', monospace; font-size:24px; font-weight:700; margin:10px 0 4px; color:var(--warning, #f59e0b);">₹0.00</h3>
+                    <span style="font-size:10px; color:var(--danger, #ef4444);">↓ +8.3% Pending from customers</span>
+                </div>
+            </section>
+
+
+            <!-- SEARCH & FILTERS -->
+
+            <div class="search-area" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div class="search-box" style="width: 380px;">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by name, phone, or email..."
+                    >
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border-cyber); padding: 0 14px; height: 44px; border-radius: 10px; font-size: 11px; color: var(--text-muted);">
+                        <span>📅 All Time</span>
+                    </div>
+                    <button style="display: flex; align-items: center; gap: 6px; background: var(--bg-card); border: 1px solid var(--border-cyber); padding: 0 16px; height: 44px; border-radius: 10px; font-size: 11px; color: var(--text-muted); cursor: pointer;">
+                        ↓ Export
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Split Layout: Customer Table & Right Details Pane -->
+            <div class="customers-split-layout" style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px;">
+
+                <!-- CUSTOMER TABLE -->
+
+                <div class="table-wrapper">
+                    <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-cyber); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong style="font-size: 13px;">Customers (<span id="customerCountHeader">0</span>)</strong>
+                            <span style="display: block; font-size: 10px; color: var(--text-dim); margin-top: 2px;">Showing all customers</span>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Total Orders</th>
+                                <th>Total Spent</th>
+                                <th>Outstanding</th>
+                                <th>Last Purchase</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="customerBody">
+                        </tbody>
+                    </table>
+
+                    <div
+                        class="empty-state"
+                        id="emptyState"
+                    >
+                        No customers found.
+                    </div>
+
+                    <!-- Pagination Footer -->
+                    <div class="pagination" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-top: 1px solid var(--border-cyber); font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+                        <span id="paginationInfo">Showing 1 to 10 of 248 customers</span>
+                        <div class="page-buttons" id="paginationControls" style="display: flex; gap: 4px;">
+                            <button style="width: 28px; height: 28px; background: var(--accent-cyan); color: #030712; border: none; border-radius: 6px; font-weight: 700;">1</button>
+                            <button style="width: 28px; height: 28px; background: rgba(30,41,59,0.6); color: var(--text-muted); border: 1px solid var(--border-cyber); border-radius: 6px;">2</button>
+                            <button style="width: 28px; height: 28px; background: rgba(30,41,59,0.6); color: var(--text-muted); border: 1px solid var(--border-cyber); border-radius: 6px;">3</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Customer Details Telemetry Pane (Matching Reference Image) -->
+                <div class="customer-right-pane" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="bento-card" style="background: linear-gradient(135deg, rgba(17, 24, 39, 0.86), rgba(11, 15, 25, 0.75)); border: 1px solid var(--border-cyber); border-radius: 14px; padding: 22px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(148,163,184,0.08); padding-bottom: 14px; margin-bottom: 16px;">
+                            <h3 style="font-size: 15px; font-weight: 700;">Customer Details</h3>
+                            <button class="close-btn" id="paneCloseBtn" style="width: 28px; height: 28px; font-size: 14px;">×</button>
+                        </div>
+
+                        <div id="customerDetailsContent">
+                            <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 18px;">
+                                <div id="paneAvatar" style="width: 44px; height: 44px; background: rgba(6,182,212,0.15); color: var(--accent-cyan); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px;">RS</div>
+                                <div>
+                                    <strong id="paneName" style="font-size: 14px; display: block; color: #f3f4f6;">Rahul Sharma</strong>
+                                    <span style="font-size: 10px; color: var(--text-dim); display: block;">Customer since 12 Jan 2024</span>
+                                </div>
+                                <span id="paneStatusBadge" class="status-badge" style="margin-left: auto; color: #86efac; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); padding: 4px 10px; border-radius: 20px; font-size: 9px; font-family: 'JetBrains Mono', monospace;">Active</span>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11px; margin-bottom: 18px; color: var(--text-muted);">
+                                <div><i class="fa-regular fa-envelope" style="margin-right: 6px; color: var(--accent-cyan);"></i> <span id="paneEmail">rahul@gmail.com</span></div>
+                                <div style="margin-top: 2px;"><i class="fa-solid fa-phone" style="margin-right: 6px; color: var(--accent-cyan);"></i> <span id="panePhone" style="font-family: 'JetBrains Mono', monospace;">9876543210</span></div>
+                                <div style="margin-top: 2px;"><i class="fa-solid fa-location-dot" style="margin-right: 6px; color: var(--accent-cyan);"></i> <span>New Delhi, India</span></div>
+                            </div>
+
+                            <!-- Stat blocks inside pane -->
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+                                <div style="background: rgba(3,7,18,0.5); border: 1px solid var(--border-cyber); border-radius: 10px; padding: 10px; text-align: center;">
+                                    <span style="display:block; font-size:9px; color:var(--text-dim); font-family:'JetBrains Mono', monospace;">Total Orders</span>
+                                    <strong id="paneTotalOrders" style="font-size: 14px; font-family:'JetBrains Mono', monospace; display: block; margin-top: 4px;">12</strong>
+                                </div>
+                                <div style="background: rgba(3,7,18,0.5); border: 1px solid var(--border-cyber); border-radius: 10px; padding: 10px; text-align: center;">
+                                    <span style="display:block; font-size:9px; color:var(--text-dim); font-family:'JetBrains Mono', monospace;">Total Spent</span>
+                                    <strong id="paneTotalSpent" style="font-size: 13px; font-family:'JetBrains Mono', monospace; display: block; margin-top: 4px; color: var(--accent-cyan);">₹24,500</strong>
+                                </div>
+                                <div style="background: rgba(3,7,18,0.5); border: 1px solid var(--border-cyber); border-radius: 10px; padding: 10px; text-align: center;">
+                                    <span style="display:block; font-size:9px; color:var(--text-dim); font-family:'JetBrains Mono', monospace;">Outstanding</span>
+                                    <strong id="paneOutstanding" style="font-size: 13px; font-family:'JetBrains Mono', monospace; display: block; margin-top: 4px; color: var(--warning);">₹0.00</strong>
+                                </div>
+                            </div>
+
+                            <!-- Recent Orders Table -->
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                    <strong style="font-size: 12px;">Recent Orders</strong>
+                                    <a href="#" style="font-size: 11px; color: var(--accent-cyan); text-decoration: none;">View All</a>
+                                </div>
+                                <div style="background: rgba(3,7,18,0.6); border: 1px solid var(--border-cyber); border-radius: 10px; overflow: hidden; font-size: 11px;">
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <thead>
+                                            <tr style="border-bottom: 1px solid var(--border-cyber); color: var(--text-dim); font-size: 9px; font-family: 'JetBrains Mono', monospace;">
+                                                <th style="padding: 8px 10px;">#</th>
+                                                <th style="padding: 8px 10px;">Date</th>
+                                                <th style="padding: 8px 10px;">Amount</th>
+                                                <th style="padding: 8px 10px;">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="paneRecentOrdersBody">
+                                            <tr>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">INV-0012</td>
+                                                <td style="padding: 8px 10px; color: var(--text-dim);">12 Sep 2025</td>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">₹2,099.00</td>
+                                                <td style="padding: 8px 10px; color: var(--success);">Completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">INV-0008</td>
+                                                <td style="padding: 8px 10px; color: var(--text-dim);">28 Aug 2025</td>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">₹1,499.00</td>
+                                                <td style="padding: 8px 10px; color: var(--success);">Completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">INV-0003</td>
+                                                <td style="padding: 8px 10px; color: var(--text-dim);">14 Aug 2025</td>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">₹3,250.00</td>
+                                                <td style="padding: 8px 10px; color: var(--success);">Completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">INV-0001</td>
+                                                <td style="padding: 8px 10px; color: var(--text-dim);">02 Aug 2025</td>
+                                                <td style="padding: 8px 10px; font-family:'JetBrains Mono',monospace;">₹2,499.00</td>
+                                                <td style="padding: 8px 10px; color: var(--success);">Completed</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                            <button class="edit-btn" id="paneEditCustomerBtn" style="width: 100%; height: 38px; border-radius: 8px; font-size: 11px; cursor: pointer;"><i class="fa-regular fa-pen-to-square"></i> Edit Customer</button>
+                            <button class="view-btn" id="paneViewHistoryBtn" style="width: 100%; height: 38px; border-radius: 8px; font-size: 11px; cursor: pointer;"><i class="fa-solid fa-clock-rotate-left"></i> View Purchase History</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         DRAWER OVERLAY
+    ========================== -->
+
+    <div
+        class="drawer-overlay"
+        id="drawerOverlay"
+    ></div>
+
+
+    <!-- =========================
+         CUSTOMER DETAILS DRAWER (Mobile / Fallback)
+    ========================== -->
+
+    <aside
+        class="drawer"
+        id="customerDrawer"
+    >
+
+        <!-- DRAWER HEADER -->
+
+        <div class="drawer-header">
+
+            <div>
+
+                <span class="section-label">
+                    CUSTOMER
+                </span>
+
+                <h2>
+                    Customer Information
+                </h2>
+
+            </div>
+
+            <button
+                class="close-btn"
+                id="closeDrawer"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- CUSTOMER PROFILE -->
+
+        <div class="customer-profile">
+
+            <div
+                class="customer-avatar"
+                id="drawerAvatar"
+            >
+                C
+            </div>
+
+            <div>
+
+                <h3 id="drawerName">
+                    Customer
+                </h3>
+
+                <p id="drawerEmail">
+                    customer@email.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="drawer-section">
+
+            <h3>
+                Contact
+            </h3>
+
+            <div class="info-card">
+
+                <div class="info-row">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="drawerContactEmail">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="info-row">
+
+                    <span>
+                        Phone
+                    </span>
+
+                    <strong id="drawerPhone">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL PURCHASES -->
+
+        <div class="purchase-total">
+
+            <span>
+                Total Purchases
+            </span>
+
+            <strong id="drawerPurchases">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <!-- PURCHASE HISTORY -->
+
+        <div class="drawer-section">
+
+            <h3>
+                Purchase History
+            </h3>
+
+            <div id="purchaseHistory">
+            </div>
+
+        </div>
+
+
+        <!-- RECENT TRANSACTIONS -->
+
+        <div class="drawer-section">
+
+            <h3>
+                Recent Transactions
+            </h3>
+
+            <div id="recentTransactions">
+            </div>
+
+        </div>
+
+
+        <!-- DRAWER ACTIONS -->
+
+        <div class="drawer-actions">
+
+            <button
+                class="edit-btn"
+                id="editCustomerBtn"
+            >
+                Edit
+            </button>
+
+            <button
+                class="view-btn"
+                id="viewCustomerBtn"
+            >
+                View
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         ADD CUSTOMER MODAL
+    ========================== -->
+
+    <div
+        class="modal-overlay"
+        id="modalOverlay"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-label">
+                        CUSTOMER
+                    </span>
+
+                    <h2>
+                        Add Customer
+                    </h2>
+
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closeModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="customerForm">
+
+                <div class="input-group">
+
+                    <label>
+                        Customer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        placeholder="Enter customer email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Phone
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerPhone"
+                        placeholder="Enter phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    Add Customer
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="customers.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailAI POS — Cashier Checkout Terminal</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+</head>
+<body class="dash-body">
+
+    <div class="dash-layout">
+        <!-- Cashier Sidebar -->
+        <aside class="dash-sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-pulse"></div>
+                <span class="brand-text">RetailAI<span class="dot">.os</span></span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon-box glow-cyan">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    </span> 
+                    Dashboard
+                </a>
+                <a href="../sales/sales.html" class="nav-item">
+                    <span class="nav-icon-box glow-indigo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    </span> 
+                    Sales Ledger
+                </a>
+                <a href="../product_catalog/product.html" class="nav-item">
+                    <span class="nav-icon-box glow-purple">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    </span> 
+                    Product Catalog
+                </a>
+                <a href="../customer_metrix/customers.html" class="nav-item">
+                    <span class="nav-icon-box glow-cyan">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </span> 
+                    Customer Matrix
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <span class="nav-icon-box glow-danger">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    </span> 
+                    Logout
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-pill-mini">
+                    <span class="status-dot"></span>
+                    <div>
+                        <p class="user-name-mini" id="userNameDisplay">Cashier Portal</p>
+                        <p class="user-role-mini" id="userRoleDisplay">POS Operator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dash-main">
+            <!-- Header -->
+            <header class="dash-header">
+                <div class="header-title-box">
+                    <div class="breadcrumb"><span>POS Terminal</span> / <strong>Checkout Desk</strong></div>
+                    <h1>Cashier Operations Hub</h1>
+                    <p class="header-subtitle">Scan, sell and serve — fast, simple, reliable.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="live-status-pill">
+                        <span class="live-dot"></span>
+                        <span>Register Sync: <strong id="syncTime">Online</strong></span>
+                    </div>
+                    <div class="header-datetime-pill">
+                        <span>📅 Sat, 13 Sep 2025</span>
+                        <span>10:42:18 PM</span>
+                    </div>
+                    <div class="user-profile-box">
+                        <div class="avatar" id="headerAvatarInitials">CS</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="dash-content">
+                
+                <!-- 1. Cashier KPIs with Icons -->
+                <section class="kpi-grid">
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-cyan">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                </span>
+                                <span class="kpi-title">Today's Sales</span>
+                            </div>
+                            <span class="kpi-badge positive">Live</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiTodaySales">₹0.00</h2>
+                        <p class="kpi-sub">Total revenue collected today</p>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-indigo">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                </span>
+                                <span class="kpi-title">Transactions</span>
+                            </div>
+                            <span class="kpi-badge">Count</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiTodayTxns">0</h2>
+                        <p class="kpi-sub">Completed checkouts</p>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-purple">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                                </span>
+                                <span class="kpi-title">Items Sold</span>
+                            </div>
+                            <span class="kpi-badge">Volume</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiItemsSold">0</h2>
+                        <p class="kpi-sub">Total physical units moved</p>
+                    </div>
+                    <div class="kpi-card glass-panel">
+                        <div class="kpi-header">
+                            <div class="kpi-title-with-icon">
+                                <span class="nav-icon-box glow-cyan">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                                </span>
+                                <span class="kpi-title">Average Sale Value</span>
+                            </div>
+                            <span class="kpi-badge">ASV</span>
+                        </div>
+                        <h2 class="kpi-value" id="kpiAvgSale">₹0.00</h2>
+                        <p class="kpi-sub">Per transaction yield</p>
+                    </div>
+                </section>
+
+                <!-- 2. Main POS Workspace: Quick Sale & Checkout Summary -->
+                <section class="pos-workspace-grid">
+                    <!-- Left: Quick Sale & Product Catalog Search -->
+                    <div class="pos-left-pane glass-panel">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-cyan">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                                </span>
+                                <h3>Quick Sale / POS Input</h3>
+                            </div>
+                            <span class="sub-link" id="clearCartBtn">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 3px;"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                Clear Cart
+                            </span>
+                        </div>
+                        
+                        <div class="pos-input-group search-with-shortcut">
+                            <span class="search-ico">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </span>
+                            <input type="text" id="productSearchInput" placeholder="Scan barcode or search SKU name...">
+                            <span class="shortcut-pill">Ctrl + K</span>
+                        </div>
+
+                        <div class="cart-items-container">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>ITEM NAME</th>
+                                        <th>QTY</th>
+                                        <th>PRICE</th>
+                                        <th>TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cartTableBody">
+                                    <tr>
+                                        <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 3rem 0;">
+                                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛒</div>
+                                            Cart is empty. Scan items to begin.<br>
+                                            <small style="color: rgba(148, 163, 184, 0.6);">Start by scanning a barcode or searching for a product.</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Right: Customer Lookup & Payment Summary -->
+                    <div class="pos-right-pane glass-panel">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-indigo">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                </span>
+                                <h3>Payment & Summary</h3>
+                            </div>
+                        </div>
+
+                        <div class="customer-lookup-box">
+                            <label for="customerSearch">Customer Matrix Lookup</label>
+                            <div class="customer-input-wrapper">
+                                <span class="cust-ico">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </span>
+                                <input type="text" id="customerSearch" placeholder="Enter phone number or name...">
+                            </div>
+                        </div>
+
+                        <div class="payment-summary-box">
+                            <div class="summary-row">
+                                <span>
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                    Subtotal
+                                </span>
+                                <span id="cartSubtotal">₹0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+                                    Tax (GST 18%)
+                                </span>
+                                <span id="cartTax">₹0.00</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px; color: var(--success);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    Total Payable
+                                </span>
+                                <span id="cartTotal">₹0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-actions">
+                            <button class="btn btn-cash" id="payCashBtn">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+                                Cash Payment
+                            </button>
+                            <button class="btn btn-upi" id="payUpiBtn">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><line x1="3" y1="14" x2="10" y2="14"></line><line x1="10" y1="14" x2="10" y2="21"></line><line x1="3" y1="21" x2="7" y2="21"></line></svg>
+                                UPI / QR Code
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Available Products & Recent Sales Activity -->
+                <section class="analytics-row">
+                    <div class="analytics-card glass-panel wide-card">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-purple">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                                </span>
+                                <div>
+                                    <h3>Available Products Catalog</h3>
+                                    <p class="card-desc">Quick-tap items for fast counter billing</p>
+                                </div>
+                            </div>
+                            <span class="sub-link">View All →</span>
+                        </div>
+                        <div class="product-grid-quick" id="quickProductGrid">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="analytics-card glass-panel narrow-card">
+                        <div class="card-header-flex">
+                            <div class="card-title-with-icon">
+                                <span class="nav-icon-box glow-cyan">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </span>
+                                <div>
+                                    <h3>Recent Sales</h3>
+                                    <p class="card-desc">Today's transactions</p>
+                                </div>
+                            </div>
+                            <span class="sub-link">View All →</span>
+                        </div>
+                        <div class="recent-sales-list" id="recentSalesList">
+                            <p style="color: var(--text-muted); font-size: 0.85rem;">No recent transactions recorded yet.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

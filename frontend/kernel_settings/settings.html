@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RetailAI.OS - Kernel Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">SYSTEM CONFIGURATION</p>
+
+                <h1>Kernel Settings</h1>
+            </div>
+
+            <div class="topbar-actions">
+                <button
+                    class="back-dashboard-btn"
+                    id="backDashboardBtn"
+                >
+                    ← Back to Dashboard
+                </button>
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <div class="page-heading">
+
+                <div>
+                    <span class="section-label">APPLICATION CONTROL</span>
+
+                    <h2>Settings</h2>
+
+                    <p>
+                        Manage your profile, security and business preferences.
+                    </p>
+                </div>
+
+                <div class="role-badge" id="roleBadge">
+                    ADMIN
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+            <section class="settings-section" id="profileSection">
+
+                <div class="section-title">
+
+                    <div>
+                        <span class="section-number">01</span>
+
+                        <div>
+                            <span class="section-label">ACCOUNT</span>
+                            <h3>Profile</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="profile-header">
+
+                        <div class="avatar" id="avatar">
+                            NK
+                        </div>
+
+                        <div>
+                            <h4 id="profileName">
+                                Nitish Kumar
+                            </h4>
+
+                            <p id="profileEmail">
+                                nitish@retailai.os
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-grid">
+
+                        <div class="info-item">
+
+                            <span>Name</span>
+
+                            <strong id="nameValue">
+                                Nitish Kumar
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>Email</span>
+
+                            <strong id="emailValue">
+                                nitish@retailai.os
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>Role</span>
+
+                            <strong id="roleValue">
+                                Administrator
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECURITY -->
+            <section class="settings-section" id="securitySection">
+
+                <div class="section-title">
+
+                    <div>
+                        <span class="section-number">02</span>
+
+                        <div>
+                            <span class="section-label">PROTECTION</span>
+                            <h3>Security</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            🔐
+                        </div>
+
+                        <div class="card-content">
+
+                            <span>ACCOUNT SECURITY</span>
+
+                            <h4>Change Password</h4>
+
+                            <p>
+                                Update your account password regularly.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="action-btn"
+                            id="changePasswordBtn"
+                        >
+                            Change
+                        </button>
+
+                    </div>
+
+
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            ◉
+                        </div>
+
+                        <div class="card-content">
+
+                            <span>ACTIVE SESSION</span>
+
+                            <h4>Session Information</h4>
+
+                            <p>
+                                Current browser session and login details.
+                            </p>
+
+                        </div>
+
+                        <div class="session-status">
+                            ACTIVE
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BUSINESS SETTINGS -->
+            <section
+                class="settings-section"
+                id="businessSection"
+            >
+
+                <div class="section-title">
+
+                    <div>
+                        <span class="section-number">03</span>
+
+                        <div>
+                            <span class="section-label">BUSINESS CONFIGURATION</span>
+                            <h3>Business Settings</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+                    <div class="preference-card">
+
+                        <div class="card-icon">
+                            🏪
+                        </div>
+
+                        <div>
+
+                            <span>BUSINESS PROFILE</span>
+
+                            <h4>Business Information</h4>
+
+                            <p>
+                                Manage business name and basic information.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="outline-btn"
+                            id="businessInfoBtn"
+                        >
+                            Manage
+                        </button>
+
+                    </div>
+
+
+                    <div class="preference-card">
+
+                        <div class="card-icon">
+                            ₹
+                        </div>
+
+                        <div>
+
+                            <span>DISPLAY</span>
+
+                            <h4>Currency / Display Preferences</h4>
+
+                            <p>
+                                Configure currency and display settings.
+                            </p>
+
+                        </div>
+
+                        <div class="currency-box">
+                            ₹ INR
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- APPLICATION -->
+            <section
+                class="settings-section"
+                id="applicationSection"
+            >
+
+                <div class="section-title">
+
+                    <div>
+                        <span class="section-number">04</span>
+
+                        <div>
+                            <span class="section-label">SYSTEM EXPERIENCE</span>
+                            <h3>Application</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="application-card">
+
+                    <div class="application-info">
+
+                        <div class="card-icon">
+                            ⚙
+                        </div>
+
+                        <div>
+
+                            <span>USER EXPERIENCE</span>
+
+                            <h4>Preferences</h4>
+
+                            <p>
+                                Control application behaviour and interface preferences.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="toggle-row">
+
+                        <div>
+                            <strong>Compact Interface</strong>
+
+                            <small>
+                                Use a denser dashboard layout.
+                            </small>
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="compactToggle"
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="toggle-row">
+
+                        <div>
+                            <strong>Smart Notifications</strong>
+
+                            <small>
+                                Receive important business alerts.
+                            </small>
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="notificationToggle"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="save-area">
+
+                <span id="saveMessage">
+                    All changes are saved automatically.
+                </span>
+
+                <button
+                    class="save-btn"
+                    id="saveBtn"
+                >
+                    Save Preferences
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- CHANGE PASSWORD MODAL -->
+    <div
+        class="modal-overlay"
+        id="passwordModal"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-label">
+                        SECURITY
+                    </span>
+
+                    <h2>Change Password</h2>
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closePasswordModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="passwordForm">
+
+                <div class="input-group">
+
+                    <label>Current Password</label>
+
+                    <input
+                        type="password"
+                        id="currentPassword"
+                        placeholder="Enter current password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>New Password</label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Enter new password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm new password"
+                        required
+                    >
+
+                </div>
+
+
+                <p
+                    class="form-message"
+                    id="passwordMessage"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    class="save-btn full"
+                >
+                    Update Password
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUSINESS INFORMATION MODAL -->
+    <div
+        class="modal-overlay"
+        id="businessModal"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-label">
+                        BUSINESS
+                    </span>
+
+                    <h2>Business Information</h2>
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closeBusinessModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="businessForm">
+
+                <div class="input-group">
+
+                    <label>Business Name</label>
+
+                    <input
+                        type="text"
+                        id="businessName"
+                        value="My Local Store"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Currency</label>
+
+                    <select id="currency">
+
+                        <option value="INR">
+                            ₹ INR
+                        </option>
+
+                        <option value="USD">
+                            $ USD
+                        </option>
+
+                        <option value="EUR">
+                            € EUR
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-btn full"
+                >
+                    Save Business Settings
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="settings.js"></script>
+
+</body>
+</html>
